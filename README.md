@@ -1,11 +1,11 @@
 # PropertyFinder
 This contains few automation examples on Property Finder website using Selenium, Cucumber and Serenity
 
-# Prerequisites : -
+## Prerequisites : -
 •	Should have java installed
 •	Should have maven installed
 
-# Execute Test : -
+## Execute Test : -
 The Default Browser used is Chrome
 
 •	mvn clean test
@@ -24,7 +24,7 @@ If User Wants to specify the browser than he must use
 
     mvn clean verify -P phantom.js
 
-# Please Note : -
+## Please Note : -
 
 Since the drivers used for windows and mac are different If the user wishes to run the test pack on mac than he has to make the following changes
 
@@ -36,11 +36,13 @@ Since the drivers used for windows and mac are different If the user wishes to r
 
      • src/test/resources/driver/phantomjs.exe
 
-# Execution Results : -
+## Execution Results : -
 
 An html file is generated at "target/site/index.html"
 
 The Report will like the below format : -
+
+<img width="1036" alt="screen shot 2017-12-08 at 8 21 39 pm" src="https://user-images.githubusercontent.com/14148321/33774346-66a64070-dc54-11e7-9e68-292f6eceac2a.png">
 
 
 
