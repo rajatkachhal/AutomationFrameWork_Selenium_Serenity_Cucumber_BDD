@@ -3,6 +3,7 @@ This contains few automation examples on Property Finder website using Selenium,
 
 ## Prerequisites : -
 •	Should have java installed
+
 •	Should have maven installed
 
 ## Execute Test : -
