@@ -3,6 +3,7 @@ This contains few automation examples on Property Finder website using Selenium,
 
 ## Prerequisites : -
 •	Should have java installed
+
 •	Should have maven installed
 
 ## Execute Test : -
@@ -38,9 +39,9 @@ Since the drivers used for windows and mac are different If the user wishes to r
 
 ## Execution Results : -
 
-An html file is generated at "target/site/index.html"
+An html file is generated at the location : - "target/site/index.html"
 
-The Report will like the below format : -
+The Report will be in the below format : -
 
 <img width="1036" alt="screen shot 2017-12-08 at 8 21 39 pm" src="https://user-images.githubusercontent.com/14148321/33774346-66a64070-dc54-11e7-9e68-292f6eceac2a.png">
 
