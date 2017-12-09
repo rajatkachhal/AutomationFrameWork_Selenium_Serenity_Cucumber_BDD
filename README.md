@@ -23,7 +23,7 @@ If User Wants to specify the browser than he must use
 
 •	For Headless
 
-    mvn clean verify -P phantom.js
+    mvn clean verify -P phantomjs
 
 ## Please Note : -
 
@@ -39,7 +39,7 @@ Since the drivers used for windows and mac are different If the user wishes to r
 
 ## Execution Results : -
 
-An html file is generated at the location : - "target/site/index.html"
+An html file is generated at the location : - "target/site/serenity/index.html"
 
 The Report will be in the below format : -
 
