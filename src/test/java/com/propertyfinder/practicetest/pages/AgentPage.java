@@ -5,6 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class AgentPage extends PageObject {
@@ -140,6 +141,10 @@ public class AgentPage extends PageObject {
 
     public void changetoArabic() {
         arabicChange.click();
+        String newUrl = getDriver().getCurrentUrl();
         waitABit(1000);
+        assertThat("The new url after changing to Arabic (" + newUrl + ")",
+                newUrl.matches("https://www.propertyfinder.ae/ar(.*)"));
     }
+
 }
