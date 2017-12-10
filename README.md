@@ -1,5 +1,5 @@
 # PropertyFinder
-This contains few automation examples on Property Finder website using Selenium, Cucumber and Serenity
+This contains few automation examples on Property Finder website using Selenium, Cucumber and Serenity BDD
 
 ## Prerequisites : -
 •	Should have java installed
