@@ -17,34 +17,34 @@ import java.util.stream.Collectors;
 
 public class HomePage extends PageObject {
 
-    private String propertytypelist = "//select[contains(@data-url,'propertytype')]/..//div[@class='ms-drop ']/ul/li";
+    private String propertytypelist = "//div[@class='dropdown_popup dropdown_popup-opened false']//div[@class='dropdown_item ']";
 
-    private String leasetypelist = "//div[@class='pure-g search-wrapper']//div[@class='ms-drop ']/ul/li";
+    private String leasetypelist = "//div[@class='dropdown_popup dropdown_popup-opened false']//div[@class='dropdown_item ']";
 
-    private String bedroomcontentlist = "//div[@id='bedroom_group']//div[@class='ms-drop ']/ul/li";
+    private String bedroomcontentlist = "//div[@class='dropdown_popup dropdown_popup-opened false']//div[@class='dropdown_item ']";
 
-    private String bedroomlist = "//div[@id = 'bedroom_group']//button[@class = 'ms-choice']";
+    private String bedroomlist = "//div[@class='searchproperty_column searchproperty_bed']//div[@class='dropdown dropdown-height1 dropdown-widthhalf']";
 
-    @FindBy(xpath = "//select[contains(@data-url,'propertytype')]/..//button")
+    @FindBy(xpath = "//div[contains(text(),'Property type') and @class='dropdown_text ']")
     private WebElementFacade typedropdown;
 
-    @FindBy(xpath = "//div[@class='pure-g search-wrapper']//button[@class='ms-choice']")
+    @FindBy(xpath = "//div[contains(text(),'Rent') and @class='dropdown_text ']")
     private WebElementFacade leasetypedropdown;
 
-    @FindBy(xpath = "//input[@name='q']")
+    @FindBy(xpath = "//input[@class='autocomplete_input']")
     private WebElementFacade locationsearchbox;
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//button[@class='button button-fullheight button-connectedright']")
     private WebElementFacade findbtn;
 
 
-    @FindBy(xpath = "//div[@class='title-sort-area']//button[@type='button']")
+    @FindBy(xpath = "//div[@class='propertyheader_sortfield']")
     private WebElementFacade sortByBtn;
 
     @FindBy(xpath = "//ul[@class='header-menu']//a[contains(text(),'Find agent')]")
     private WebElementFacade agenTab;
 
-    private String sortByFilterList = "//div[@class='title-sort-area']//div[@class='ms-drop ']/ul/li";
+    private String sortByFilterList = "//div[@class='dropdown_popup dropdown_popup-opened false']//div[@class='dropdown_item ']";
 
     @FindBy(xpath = "//span[@class='price ']")
     private List<WebElementFacade> priceList;

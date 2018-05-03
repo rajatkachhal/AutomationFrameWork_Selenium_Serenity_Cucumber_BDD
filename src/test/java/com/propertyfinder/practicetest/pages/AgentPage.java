@@ -5,58 +5,64 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class AgentPage extends PageObject {
 
-    private String nationalitylist = "//select[@name='nationality']/..//div[@class='ms-drop ']//li[@data-value]";
+    private String nationalitylist = "//div[@class='dropdown_popup dropdown_popup-opened false']//div[@class='dropdown_item ']";
 
-    private String languageMenu = "//select[@name='languages_ids[]']/..//div[@class='ms-drop multiple']//li[@data-value]";
+//    private String languageMenu = "//select[@name='languages_ids[]']/..//div[@class='ms-drop multiple']//li[@data-value]";
 
-    private String agentdetailslink = "//div[@class='img-container placeholder-agent-lg']";
+    private String languageMenu = "//div[@class='dropdown_popup dropdown_popup-opened dropdown_popup-mulitple']//div";
 
-    @FindBy(xpath = "//select[@name='languages_ids[]']/..//button")
+    private String agentdetailslink = "//a[@class='tiles_tile']";
+
+    //    @FindBy(xpath = "//select[@name='languages_ids[]']/..//button")
+    @FindBy(xpath = "//div[contains(text(),'Languages')]")
     private WebElementFacade agentropdown;
 
-    @FindBy(xpath = "//ul[@class='header-menu']//a[contains(text(),'Find agent')]")
+    @FindBy(xpath = "//div[@class='menu']//a[contains(text(),'Find agent')]")
     private WebElementFacade agentTab;
 
-    @FindBy(xpath = "//button[@type='submit']")
+//    @FindBy(xpath = "//button[@type='submit']")
+@FindBy(xpath = "//button[@class='button button-fullheight button-connectedright']")
     private WebElementFacade agentSearch;
 
-    @FindBy(xpath = "//div/h1[@class='serp-h1']")
+//    @FindBy(xpath = "//div/h1[@class='serp-h1']")
+    @FindBy(xpath = "//div/h1[@class='title']")
     private WebElementFacade agentNo;
 
-    @FindBy(xpath = "//select[@name='nationality']/..//button")
+    @FindBy(xpath = "//div[text()='Nationality' and @class='dropdown_text dropdown_text-serp']")
     private WebElementFacade agentNationalityBtn;
 
-    @FindBy(xpath = "//h1[@class='user-name']")
+    @FindBy(xpath = "//h1[@class='title title-size1 bioinfo_name']")
     private WebElementFacade agentName;
 
-    @FindBy(xpath = "//div[@class='user-nationality']//div[@class='content']")
+    @FindBy(xpath = "//span[contains(text(), 'Nationality:')]//following-sibling::span[@class='table_column']")
     private WebElementFacade agentNationality;
 
-    @FindBy(xpath = "//div[@class='user-language']//div[@class='content']")
+    @FindBy(xpath = "//span[contains(text(), 'Languages:')]//following-sibling::span[@class='table_column']")
     private WebElementFacade agentLanguages;
 
-    @FindBy(xpath = "//div[@class='user-rera-no']//div[@class='content']")
+    @FindBy(xpath = "//span[contains(text(), 'License No.')]//following-sibling::span[@class='table_column']")
     private WebElementFacade agentLicenseNo;
 
-    @FindBy(xpath = "//button[@data-tab='aboutMe']")
+    @FindBy(xpath = "//a[@title='About me']")
     private WebElementFacade aboutMe;
 
-    @FindBy(xpath = "//div[@data-tab-ref='aboutMe']")
+    @FindBy(xpath = "//div[@class='tab_content tab_content-size1 tab_content-active']")
     private WebElementFacade aboutMeData;
 
-    @FindBy(xpath = "//a[@class='action-button call-agent reveal']")
+    @FindBy(xpath = "//a[@class='button pane_button']")
     private WebElementFacade agentPhoneBtnEarlier;
 
-    @FindBy(xpath = "//a[@class='action-button call-agent reveal revealed']")
+    @FindBy(xpath = "//span[@class='button_text button_text-value button_phone-ltr']")
     private WebElementFacade agentPhoneBtnLater;
 
-    @FindBy(xpath = "//div[@class='company-name']")
-    private WebElementFacade agentCompanyName;
+//    @FindBy(xpath = "//div[@class='brokerthumbnail_text']//p[@class='text text-size1']")
+//    private WebElementFacade agentCompanyName;
 
     @FindBy(xpath = "//div[@class='user-experience']//div[@class='content']")
     private WebElementFacade agentExperience;
@@ -68,7 +74,7 @@ public class AgentPage extends PageObject {
     @FindBy(xpath = "//div[@class='user-linkedin']//a[contains(text(),'View profile')]")
     private WebElementFacade agentLinkedin;
 
-    @FindBy(xpath = "//header//div[@class='language-wrapper']/a[@dir]")
+    @FindBy(xpath = "//div[@class='globalswitch_language']//a[@class='globalswitch_langlink globalswitch_langlink-ar']")
     private WebElementFacade arabicChange;
 
 
@@ -124,19 +130,18 @@ public class AgentPage extends PageObject {
         String nationality = agentNationality.getText();
         String languages = agentLanguages.getText();
         String licenseno = agentLicenseNo.getText();
-        String companyname = agentCompanyName.getText();
-        String experience = agentExperience.getText();
-        String listings = agentActListings.getText();
-        String linkedin = agentLinkedin.getAttribute("href");
+//        String companyname = agentCompanyName.getText();
+//        String experience = agentExperience.getText();
+//        String listings = agentActListings.getText();
+//        String linkedin = agentLinkedin.getAttribute("href");
         aboutMe.click();
         String aboutme = aboutMeData.getText();
         agentPhoneBtnEarlier.click();
         String phoneno = agentPhoneBtnLater.getText();
         waitABit(1000);
-        return String.format("Agent Name  -->  %s\nAgent Nationality  -->  %s\nAgent Languages  -->  %s\nAgent LicenseNo  -->  %s\nCompany Name  -->  %s\n" +
-                        "Agent Experience  -->  %s\nActive Listings  -->  %s\nLinked In Profile URL  -->  %s\nPhone no  -->  %s\nAbout Me  -->  %s",
-                name, nationality, languages, licenseno, companyname, experience,
-                listings, linkedin, phoneno, aboutme);
+        return String.format("Agent Name  -->  %s\nAgent Nationality  -->  %s\nAgent Languages  -->  %s\nAgent LicenseNo  -->   %s\n" +
+                        "Phone no  -->  %s\nAbout Me  -->  %s",
+                name, nationality, languages, licenseno, phoneno, aboutme);
     }
 
     public void changetoArabic() {

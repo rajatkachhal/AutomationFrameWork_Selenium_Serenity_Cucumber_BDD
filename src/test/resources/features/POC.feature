@@ -1,4 +1,4 @@
-Feature: Assesment test for Property Finder
+Feature: POC for serenity
 
   Scenario Outline: Fetching the agents results as per given criteria and storing the details in CSV file
     Given the user is on Qatar Property Finder home page
@@ -8,7 +8,7 @@ Feature: Assesment test for Property Finder
     And User able to store results in an CSV file
     Examples:
       | PropertyType | LeaseType | Location  | MinimumBed | MaximumBed | FilterOption |
-      | Villa        | BUY       | The Pearl | 3 Beds     | 7 Beds     | Price (high) |
+      | Villa        | Buy       | The Pearl | 3 Bedrooms | 7 Bedrooms | Price (high) |
 
 
   Scenario Outline: Agents Check

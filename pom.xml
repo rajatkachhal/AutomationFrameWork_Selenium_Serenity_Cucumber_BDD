@@ -129,7 +129,7 @@
             <id>firefox</id>
             <properties>
                 <webdriver.driver>firefox</webdriver.driver>
-                <webdriver.gecko.driver>src/test/resources/driver/geckodriver.exe</webdriver.gecko.driver>
+                <webdriver.gecko.driver>src/test/resources/driver/geckodriver</webdriver.gecko.driver>
             </properties>
         </profile>
         <profile>
@@ -139,14 +139,14 @@
             </activation>
             <properties>
                 <webdriver.driver>chrome</webdriver.driver>
-                <webdriver.chrome.driver>src/test/resources/driver/chromedriver.exe</webdriver.chrome.driver>
+                <webdriver.chrome.driver>src/test/resources/driver/chromedriver</webdriver.chrome.driver>
             </properties>
         </profile>
         <profile>
             <id>phantomjs</id>
             <properties>
                 <webdriver.driver>phantomjs</webdriver.driver>
-                <phantomjs.binary.path>src/test/resources/driver/phantomjs.exe</phantomjs.binary.path>
+                <phantomjs.binary.path>src/test/resources/driver/phantomjs</phantomjs.binary.path>
             </properties>
         </profile>
     </profiles>
