@@ -1,4 +1,4 @@
-# PropertyFinder
+# Framework with Selenium, Cucumber and Serenity BDD
 This contains few automation examples on Property Finder website using Selenium, Cucumber and Serenity BDD
 
 ## Prerequisites : -
